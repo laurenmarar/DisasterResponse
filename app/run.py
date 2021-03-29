@@ -53,7 +53,14 @@ def index():
     # Summarize number of urgent cases to get an idea of human resources needed in immediate future
     urgent_cases = urgent_cases.groupby('category').sum()['value']
     case_cat = list(urgent_cases.index)
-    
+
+    # Show counts of types of help offered to gague availability to address critical needs
+    df_help = df[['id', 'offer','aid_related','medical_help','aid_centers']]
+    help_available = df_help.melt(id_vars = ['id'],
+                          var_name='category', value_vars=['offer','aid_related','medical_help','aid_centers'])
+    help_available = help_available.groupby('category').sum()['value']
+    help_cat = list(help_available.index)
+
     # Create visuals
     graphs = [
         {
@@ -72,6 +79,25 @@ def index():
                 },
                 'xaxis': {
                     'title': "Category"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=help_cat,
+                    y=help_available, 
+                    marker_color='#00cc96'
+                )
+            ],
+
+            'layout': {
+                'title': 'Help available by type of aid',
+                'yaxis': {
+                    'title': "# messages"
+                },
+                'xaxis': {
+                    'title': "Type of aid"
                 }
             }
         }
