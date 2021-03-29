@@ -36,17 +36,9 @@ random_state = 10
 def load_data(database_filepath):
     """Input database filepath and return X, y, and category names"""
     
-#     engine = create_engine(database_filepath)
     engine = create_engine('sqlite:///{}'.format(database_filepath))
 
-#     conn = sqlite3.connect('DisasterResponse.db')
-#     cur = conn.cursor()
-
-#     df = pd.read_sql('SELECT * FROM DisasterResponse', con=conn)
     df = pd.read_sql_table("DisasterResponse",engine)
-
-#     conn.commit()
-#     conn.close()
     
     X = df['message'] #.values`
     y = df.iloc[:, 4:].fillna(0) #.values
@@ -61,52 +53,23 @@ def tokenize(text):
     url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     stop_words = stopwords.words("english")
     
-    # remove URLs
+    # Remove URLs
     detected_urls = re.findall(url_regex, text)
     for url in detected_urls:
         text = text.replace(url, " ")
         
     lemmatizer = WordNetLemmatizer()
     
-    # normalize case and remove punctuation and extra spaces
+    # Normalize case and remove punctuation and extra spaces
     text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower().strip())
     
-    # tokenize text
+    # Tokenize text
     tokens = word_tokenize(text)
     
-    # lemmatize andremove stop words
+    # Lemmatize andremove stop words
     tokens = [lemmatizer.lemmatize(word) for word in tokens if word not in stop_words]
 
     return tokens  
-
-# class QuestionDetector(BaseEstimator, TransformerMixin):
-
-#     def id_question(self, text):
-#         """Input text and identify if it contains a question word (who, what, where, when, why) and return boolean flag"""
-#         sentence_list = sent_tokenize(text)
-        
-#         for sentence in sentence_list:            
-            
-#             try:
-                
-#                 pos_tags = pos_tag(tokenize(sentence))
-                
-#                 first_word, first_tag = pos_tags[0]
-#                 # return true if the first word is which, who, what, where, or when
-#                 if first_tag in ['WDT', 'WP', 'WRB']:
-#                     return 1
-#             except:
-#                 return 0
-            
-#             return 0
-
-#     def fit(self, x, y=None):
-#         return self
-
-#     def transform(self, X):
-#         X_tagged = pd.Series(X).apply(self.id_question)
-
-#         return pd.DataFrame(X_tagged).fillna(0)
     
 def build_model():
     """Use Pipeline to build MultiOutputClassifer with parameters selected based on GridSearch"""
@@ -124,6 +87,7 @@ def build_model():
         ('clf', MultiOutputClassifier(RandomForestClassifier(random_state=random_state)))
     ])
     
+    # After multiple runs with GridSerachCV, store best parameters in final model
     best_parameters = {
         # GridSearchCV chose 0.75 over 1 for vect__max_df
         'features__text_pipeline__vect__max_df': [0.75],

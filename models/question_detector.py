@@ -4,10 +4,12 @@ import nltk
 from nltk import pos_tag
 from nltk.tokenize import word_tokenize, sent_tokenize
 
+# Class to detect which messages contain question markers (who, what, where, when, why).
+
 class QuestionDetector(BaseEstimator, TransformerMixin):
 
     def id_question(self, text):
-        """Input text and identify if it contains a question word (who, what, where, when, why) and return boolean flag"""
+        """Input text and identify if it contains a question word marker and return boolean flag"""
         sentence_list = sent_tokenize(text)
         
         for sentence in sentence_list:            
@@ -17,7 +19,7 @@ class QuestionDetector(BaseEstimator, TransformerMixin):
                 pos_tags = pos_tag(tokenize(sentence))
                 
                 first_word, first_tag = pos_tags[0]
-                # return true if the first word is which, who, what, where, or when
+                # Return true if the first word is which, who, what, where, or when
                 if first_tag in ['WDT', 'WP', 'WRB']:
                     return 1
             except:
