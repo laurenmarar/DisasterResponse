@@ -7,7 +7,7 @@ def load_data(messages_filepath, categories_filepath):
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
     df = messages.merge(categories, left_on='id', right_on='id')
-    
+  
     return df
 
 def clean_data(df):
@@ -29,6 +29,10 @@ def clean_data(df):
     
     df = df.drop_duplicates()
     
+    # Impute nulls
+    df.iloc[:, 4:] = df.iloc[:, 4:].fillna(0)
+    # Set outcome columns to binary
+    df.related.replace(2, 1, inplace=True)
     return df
 
 def save_data(df, database_filepath):
