@@ -59,7 +59,15 @@ Clone the repositorn and install the requirements using the script below. The pr
 - Deploys the model to a Flask web app
 - Visualizes the data with Plotly
 
-You can run these scripts on your local machine and access the web app via http://localhost:3001
+Steps to run app from your local machine: 
+1. Run the ETL and Machine Learning Pipelines:
+   - In the terminal, navigate to the repository's main directory, `../DisasterResponse`, and run the following:
+   - `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+   - `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+2. To launch the web ap:
+   - Navigate to the `../DisasterResponse/App` subfolder 
+   - Run `python run.py`
+   - Access the web app via http://localhost:3001
 
 
 
