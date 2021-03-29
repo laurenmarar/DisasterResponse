@@ -12,20 +12,20 @@ After cloning rthe repository, install the requirements. The project uses Python
 
 ## Navigation
 
- ┣ 📂app
- ┃ ┣ 📂templates
- ┃ ┃ ┣ 📜go.html
- ┃ ┃ ┗ 📜master.html
- ┃ ┗ 📜run.py
- ┣ 📂data
- ┃ ┣ 📜DisasterResponse.db
- ┃ ┣ 📜disaster_categories.csv
- ┃ ┣ 📜disaster_messages.csv
- ┃ ┗ 📜process_data.py
- ┣ 📂models
- ┃ ┣ 📜question_detector.py
- ┃ ┗ 📜train_classifier.py
- ┣ 📜README.md
- ┣ 📜requirements.txt
+ ┣ 📂app<br />
+ ┃ ┣ 📂templates<br />
+ ┃ ┃ ┣ 📜go.html<br />
+ ┃ ┃ ┗ 📜master.html<br />
+ ┃ ┗ 📜run.py<br />
+ ┣ 📂data<br />
+ ┃ ┣ 📜DisasterResponse.db<br />
+ ┃ ┣ 📜disaster_categories.csv<br />
+ ┃ ┣ 📜disaster_messages.csv<br />
+ ┃ ┗ 📜process_data.py<br />
+ ┣ 📂models<br />
+ ┃ ┣ 📜question_detector.py<br />
+ ┃ ┗ 📜train_classifier.py<br />
+ ┣ 📜README.md<br />
+ ┣ 📜requirements.txt<br />
 
 ## Outcomes
