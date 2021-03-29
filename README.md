@@ -8,13 +8,13 @@ Training on pre-labeled disaster messages provided by Figure Eight (https://appe
 
 It uses Natural Language Processing and a Machine Learning pipeline to clean the messages and categorize them into topics such as water, shelter, electricity.
 
-It then uses Plotly and Flask to build a web app where users can enter new alert messages for processing.
+It then uses Plotly and Flask to build a web app where users can enter new alert messages for processing.<br />
 ![image](https://user-images.githubusercontent.com/47547501/112878994-925d1500-9096-11eb-900c-fc59cd0e7b69.png)
 
-To help aid workers identify capacity needs for the immediate future, the web app also highlights the total cases identified as belonging to one of these more urgent categories: child alone, search and rescue, fire, earthquake, or flood. 
+To help aid workers identify capacity needs for the immediate future, the web app also highlights the total cases identified as belonging to one of these more urgent categories: child alone, search and rescue, fire, earthquake, or flood.<br />
 ![image](https://user-images.githubusercontent.com/47547501/112879044-a274f480-9096-11eb-83a4-4edc1e6a8257.png)
 
-To help aid workers gague capacity of available help, a second chart displays the messages categorized as offering aid.
+To help aid workers gague capacity of available help, a second chart displays the messages categorized as offering aid.<br />
 ![image](https://user-images.githubusercontent.com/47547501/112900108-fdb3e080-90b0-11eb-9d7f-15a254844f94.png)
 
 ## Installation
