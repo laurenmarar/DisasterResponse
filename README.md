@@ -14,6 +14,9 @@ It then uses Plotly and Flask to build a web app where users can enter new alert
 To help aid workers identify capacity needs for the immediate future, the web app also highlights the total cases identified as belonging to one of these more urgent categories: child alone, search and rescue, fire, earthquake, or flood. 
 ![image](https://user-images.githubusercontent.com/47547501/112879044-a274f480-9096-11eb-83a4-4edc1e6a8257.png)
 
+To help aid workers gague capacity of available help, a second chart displays the messages categorized as offering aid.
+![image](https://user-images.githubusercontent.com/47547501/112900108-fdb3e080-90b0-11eb-9d7f-15a254844f94.png)
+
 ## Installation
 
 Clone the repositorn and install the requirements using the script below. The project uses Python 3.
