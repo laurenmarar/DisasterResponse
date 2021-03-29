@@ -69,6 +69,8 @@ Steps to run app from your local machine:
    - Run `python run.py`
    - Access the web app via http://localhost:3001
 
+## Acknowledgements
 
+This project was completed as a part of the Data Science Nanodegree coursework at https://www.udacity.com/. The disaster message data was provided by Figure Eight (https://appen.com/)
 
 
