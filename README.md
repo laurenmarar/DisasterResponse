@@ -1,4 +1,4 @@
-# Data Engineering to Improve Disaster Response
+# Data Engineering to Improve Disaster Response Triage
 
 This project creates a tool to analyze authentic messages sent during disaster events, to help classify and prioritize those messages to inform action.
 
@@ -6,17 +6,17 @@ This project creates a tool to analyze authentic messages sent during disaster e
 
 Training on pre-labeled disaster messages provided by Figure Eight (https://appen.com/), this project classifies messages from disasters so they can be directed to the appropriate relief agencies.
 
-It uses Natural Language Processing and a Machine Learning pipeline to clean the messages and categorizes them into topics such as water, shelter, electricity.
+It uses Natural Language Processing and a Machine Learning pipeline to clean the messages and categorize them into topics such as water, shelter, electricity.
 
-It then uses Plotly and Flask to build a website where users can enter new alert messages for processing.
+It then uses Plotly and Flask to build a web app where users can enter new alert messages for processing.
 ![image](https://user-images.githubusercontent.com/47547501/112878994-925d1500-9096-11eb-900c-fc59cd0e7b69.png)
 
-To help aid workers identify capacity needs for the immediate future, the website also highlights the total cases identified as belonging to one of the most urgent categories: child alone, search and rescue, fire, earthquake, or flood. 
+To help aid workers identify capacity needs for the immediate future, the web app also highlights the total cases identified as belonging to one of these more urgent categories: child alone, search and rescue, fire, earthquake, or flood. 
 ![image](https://user-images.githubusercontent.com/47547501/112879044-a274f480-9096-11eb-83a4-4edc1e6a8257.png)
 
 ## Installation
 
-After cloning the repository, install the requirements. The project uses Python 3.
+Clone the repositorn and install the requirements using the script below. The project uses Python 3.
 
 `pip install -r requirements.txt`
 
@@ -59,8 +59,18 @@ After cloning the repository, install the requirements. The project uses Python 
 - Deploys the model to a Flask web app
 - Visualizes the data with Plotly
 
-You can run these scripts on your local machine and access the web app via http://localhost:3001
+Steps to run app from your local machine: 
+1. Run the ETL and Machine Learning Pipelines:
+   - In the terminal, navigate to the repository's main directory, `../DisasterResponse`, and run the following:
+   - `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+   - `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+2. To launch the web ap:
+   - Navigate to the `../DisasterResponse/App` subfolder 
+   - Run `python run.py`
+   - Access the web app via http://localhost:3001
 
+## Acknowledgements
 
+This project was completed as a part of the Data Science Nanodegree coursework at https://www.udacity.com/. The disaster message data was provided by Figure Eight (https://appen.com/)
 
 
