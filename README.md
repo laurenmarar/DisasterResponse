@@ -6,17 +6,17 @@ This project creates a tool to analyze authentic messages sent during disaster e
 
 Training on pre-labeled disaster messages provided by Figure Eight (https://appen.com/), this project classifies messages from disasters so they can be directed to the appropriate relief agencies.
 
-It uses Natural Language Processing and a Machine Learning pipeline to clean the messages and categorizes them into topics such as water, shelter, electricity.
+It uses Natural Language Processing and a Machine Learning pipeline to clean the messages and categorize them into topics such as water, shelter, electricity.
 
-It then uses Plotly and Flask to build a website where users can enter new alert messages for processing.
+It then uses Plotly and Flask to build a web app where users can enter new alert messages for processing.
 ![image](https://user-images.githubusercontent.com/47547501/112878994-925d1500-9096-11eb-900c-fc59cd0e7b69.png)
 
-To help aid workers identify capacity needs for the immediate future, the website also highlights the total cases identified as belonging to one of the most urgent categories: child alone, search and rescue, fire, earthquake, or flood. 
+To help aid workers identify capacity needs for the immediate future, the web app also highlights the total cases identified as belonging to one of these more urgent categories: child alone, search and rescue, fire, earthquake, or flood. 
 ![image](https://user-images.githubusercontent.com/47547501/112879044-a274f480-9096-11eb-83a4-4edc1e6a8257.png)
 
 ## Installation
 
-After cloning the repository, install the requirements. The project uses Python 3.
+Clone the repositorn and install the requirements using the script below. The project uses Python 3.
 
 `pip install -r requirements.txt`
 
